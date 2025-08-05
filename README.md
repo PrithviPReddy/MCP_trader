@@ -9,3 +9,4 @@ run
 
 run
 `npm install kiteconnect@latest`
+`npm start`
