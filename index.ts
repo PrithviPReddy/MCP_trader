@@ -10,23 +10,23 @@ const server = new McpServer({
 });
 
 // Buy a stock
-server.registerTool("buy_stock", {
+server.registerTool("buy_stock", "Executes a real buy order in Zerodha for the user", {
   title: "Buy Stock Tool",
   description: "Buy a stock using Kite Connect",
   inputSchema: { stock: z.string(), qty: z.number() }
 }, async ({ stock, qty }) => {
   await placeOrder(stock, qty, "BUY");
-  return { content: [{ type: "text", text: `✅ Bought ${qty} shares of ${stock}` }] };
+  return { content: [{ type: "text", text: `Bought ${qty} shares of ${stock}` }] };
 });
 
 //  Sell a stock
-server.registerTool("sell_stock", {
+server.registerTool("sell_stock", "Executes a real sell order in Zerodha for the user", {
   title: "Sell Stock Tool",
   description: "Sell a stock using Kite Connect",
   inputSchema: { stock: z.string(), qty: z.number() }
 }, async ({ stock, qty }) => {
   await placeOrder(stock, qty, "SELL");
-  return { content: [{ type: "text", text: `✅ Sold ${qty} shares of ${stock}` }] };
+  return { content: [{ type: "text", text: ` Sold ${qty} shares of ${stock}` }] };
 });
 
 // Start server using stdio transport
