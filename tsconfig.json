@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                     // Modern JS features
+    "module": "ESNext",                     // Required for ESM (import/export)
+    "moduleResolution": "node",            // Resolve using Node-style imports
+    "esModuleInterop": true,               // For importing CommonJS modules
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,                        // Enable all strict type checks
+    "skipLibCheck": true,                  // Skip checking of .d.ts files
+    "resolveJsonModule": true,             // Allow importing JSON files
+    "allowSyntheticDefaultImports": true,  // Allows default imports from CommonJS
+    "outDir": "./dist",                    // (Optional) Output folder if compiling
+    "baseUrl": ".",                        // Enables relative path resolution
+    "types": ["node"]                      // For Node.js type definitions
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
