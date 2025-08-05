@@ -1,11 +1,11 @@
 import { KiteConnect } from "kiteconnect";
 
-const apiKey = "z4m1r6nx09kvlowr";
-// const apiSecret = "ttriz97yjd6h72db57jonb0j9omo5rb3";//this is to verify or generate the access token
-// const requestToken = "srA9KNPs1HRJyf3r2rQAZIR0dk14tewt"; //Gives you power to place trade on other's zerodha account(other = people who use your app once you make it public)
+const apiKey = "______________";
+// const apiSecret = "_____________";//this is to verify or generate the access token
+// const requestToken = "___________"; //Gives you power to place trade on other's zerodha account(other = people who use your app once you make it public)
 //remember a request token is valid for for 1 use only 
 //for a long term use you need to use the access token
-let accessToken = "nAelyE5ithweDprehJsDWao4IE12awdr";
+let accessToken = "___________";
 const kc = new KiteConnect({ api_key: apiKey });//Initializes an instance of kiteconnect object
 
 console.log(kc.getLoginURL());// to get the login url for the user to login to the kite app
