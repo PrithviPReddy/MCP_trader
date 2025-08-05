@@ -1,4 +1,4 @@
-import { placeOrder } from "./trade.js";
+import { getPositions,placeOrder } from "./trade.js";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -35,7 +35,7 @@ server.registerTool("Show_portfolio",
     inputSchema: {}
   },
   async () => {
-    const holdings = await getHoldings();
+    const holdings = await getPositions();
     return {
       content: [{ type: "text", text: holdings }]
     };
