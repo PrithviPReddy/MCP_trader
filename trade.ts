@@ -44,11 +44,27 @@ export async function placeOrder(stock: string, qty: number, side: "BUY" | "SELL
       product: "CNC",
       order_type: "MARKET",
     });
-    console.log(`✅ ${side} order placed successfully:`, order);
+    console.log(` ${side} order placed successfully:`, order);
   } catch (err) {
-    console.error(`❌ Error placing ${side} order:`, err);
+    console.error(`Error placing ${side} order:`, err);
     throw err;
   }
-// Initialize the API calls
+
+  export async function getPositions(){
+  try {
+    const positions = await kc.getPositions();
+    let allHolding = "";
+    if (positions.net && positions.net.length > 0) {
+      positions.net.forEach((holding: any) => {
+        allHolding += `Stock: ${holding.tradingsymbol}, Quantity: ${holding.quantity}, Current Price: ${holding.price}\n`;
+      });
+    }
+
+    return allHolding || "No positions found";
+  } catch (err) {
+    console.error("Error getting positions:", err);
+    return "Error retrieving positions";
+  }
 }
-init();
+// Initialize the API calls
+// init();
