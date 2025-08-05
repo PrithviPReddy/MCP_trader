@@ -1,5 +1,5 @@
 # MCP_trader
-This is a tool for claude to trade using an MCP Server
+This is a tool that exposes trade functionality to an LLM(Claude in this case) 
 
 run
 `npm init -y`
